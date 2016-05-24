@@ -74,12 +74,12 @@ EXTRA_OECMAKE_append_class-nativesdk = "\
                -DCLANG_TABLEGEN=${STAGING_BINDIR_NATIVE}/clang-tblgen \
 "
 EXTRA_OECMAKE_append_class-target = "\
-               -DLLVM_ENABLE_PIC=False \
                -DLLVM_TABLEGEN=${STAGING_BINDIR_NATIVE}/llvm-tblgen \
                -DCLANG_TABLEGEN=${STAGING_BINDIR_NATIVE}/clang-tblgen \
                -DLLVM_TARGETS_TO_BUILD:STRING='${@get_clang_target_arch(bb, d)}' \
                -DLLVM_TARGET_ARCH:STRING='${@get_clang_target_arch(bb, d)}' \
 "
+EXTRA_OECMAKE_append_class-target_arm = " -DLLVM_ENABLE_PIC=False"
 EXTRA_OEMAKE += "REQUIRES_RTTI=1 VERBOSE=1"
 
 DEPENDS = "zlib libffi libxml2 binutils"
