@@ -80,10 +80,6 @@ EXTRA_OECMAKE_append_class-target = "\
                -DLLVM_TARGETS_TO_BUILD:STRING='${@get_clang_target_arch(bb, d)}' \
                -DLLVM_TARGET_ARCH:STRING='${@get_clang_target_arch(bb, d)}' \
 "
-#               -DCMAKE_CXX_FLAGS='-target armv7a -ccc-gcc-name ${HOST_PREFIX}g++ ${HOST_CC_ARCH}${TOOLCHAIN_OPTIONS} -v -I ${PKG_CONFIG_SYSROOT_DIR}${includedir}/c++/5.1.0 -I ${PKG_CONFIG_SYSROOT_DIR}${includedir}/c++/5.1.0/arm-rdk-linux-gnueabi' \
-#               -DCMAKE_C_FLAGS='-target armv7a -ccc-gcc-name ${HOST_PREFIX}gcc ${HOST_CC_ARCH}${TOOLCHAIN_OPTIONS} -v -I ${PKG_CONFIG_SYSROOT_DIR}${includedir}/c++/5.1.0 -I ${PKG_CONFIG_SYSROOT_DIR}${includedir}/c++/5.1.0/arm-rdk-linux-gnueabi' \
-#
-#
 EXTRA_OEMAKE += "REQUIRES_RTTI=1 VERBOSE=1"
 
 DEPENDS = "zlib libffi libxml2 binutils"
